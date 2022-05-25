@@ -3,25 +3,34 @@
 This repository lets you create WCAG EM Reports using [Eleventy](https://www.11ty.dev/). 
 
 * Write issues as Markdown files
-* Create reports in English or Dutch 
+* Create reports in English, Dutch, Brazilian Portuguese, Spanish or German
 * Automatically output a score card in the report 
+* Include your boilerplate easily, so that you can focus on describing issues
 
 Eleventy is a static site generator. In this project we use it to combine all Markdown files into one HTML file that is a report.
 
 Some more context in: [Introducing an Eleventy starter project for WCAG reports](https://hiddedevries.nl/en/blog/2021-05-24-introducing-an-eleventy-starter-project-for-wcag-reports)
 
-_This is a side project, it comes with no warranty._
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0017f6df-43fe-4164-bae1-08bf391164b3/deploy-status)](https://app.netlify.com/sites/eleventy-wcag-reporter/deploys)
+
+## Buy me a coffee
+
+Like this? 
+
+<a href='https://ko-fi.com/D1D1619P3' target='_blank'><img height='35' style='display:block;border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Supported languages
 
-| Language       | Code | Supports                |
-|----------------|------|-------------------------|
-| English        |  en  | Report itself, WCAG 2.1 |
-| Dutch          |  nl  | Report itself, WCAG 2.1 | 
-| Spanish        |  tbd | [worked on in #8](https://github.com/hidde/eleventy-wcag-reporter/issues/8) | 
-| Finnish        |  tbd | [worked on in #7](https://github.com/hidde/eleventy-wcag-reporter/issues/7) |
+| Language             | Code    | Supports                     | Credits           | 
+|----------------------|---------|------------------------------|-------------------|
+| Brazilian Portuguese |  pt-br  | Report itself, WCAG 2.0/1      | @brunopulis       |
+| Dutch                |  nl     | Report itself, WCAG 2.0/1      | @hidde            |
+| English              |  en     | Report itself, WCAG 2.0/1      | @hidde            |
+| Finnish              | fi      | Report itself, WCAG 2.0/1      | @eevajonnapanula  |
+| German               |  de     | Report itself, WCAG 2.0/1      | @mfranzke         |
+| Latinamerican Spanish |  es  | Report itself, WCAG 2.0/1      | @danisaurio       |
+
+Want to contribute a language? [Create an issue](https://github.com/hidde/eleventy-wcag-reporter/issues/new?assignees=&labels=i18n&template=add-language-support.md&title=Add+translation%3A+%5Blanguage%5D) (to indicate you'd like to take this on; the template has some instructions) and file a Pull Request.
 
 
 ## Set up
@@ -31,10 +40,10 @@ _This is a side project, it comes with no warranty._
 4. When the project files are on your computer, go to folder that contains the project files
 5. Run `npm install` to install all dependencies this project needs.
 6. Run `npm run dev` or `eleventy --serve` to start a local server and look at the reports
-7. Customise the reports: add your own logo, colors, typography and content. There is [cipsum](https://cipsum.com/) everywhere/
-8. [Create a new report](#create-a-new-report)
+7. Customise the reports: add your own logo, colors, typography and content. There is [cipsum](https://cipsum.com/) everywhere.
+8. [Create a new report](#create-a-report)
 
-From now on, you'll onlly need to run that last step: `npm run dev` or `elevent --serve`.
+From now on, you'll onlly need to run that last step: `npm run dev` or `eleventy --serve`.
 
 ## Create a report
 
@@ -105,7 +114,7 @@ For instance:
 where: 
 
 * `language` is the page's language (required) 
-* `targetWcagVersion` is the WCAG version you're evaluating against, for example `2.1` (required)
+* `targetWcagVersion` is the WCAG version you're evaluating against, for example `2.1` or `"2.0"` (required)
 
 
 displays: https://www.w3.org/WAI/WCAG21/quickref/?versions=2.1&showtechniques=248#non-text-content
